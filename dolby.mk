@@ -140,3 +140,4 @@ PRODUCT_PACKAGES += \
     libdolbyottcameracontrol \
     c2_manifest_vendor.xml \
     dolbycodec2 \
+    libdovi.so \
