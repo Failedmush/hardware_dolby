@@ -122,8 +122,6 @@ PRODUCT_PACKAGES += \
     libstagefrightdolby \
 
 # Dolby vision
-PRODUCT_PACKAGES += \
-    libcodec2_hidl_shim.vendor \
 
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/vendor/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dolby_vision.cfg \
