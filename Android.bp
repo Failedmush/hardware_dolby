@@ -332,7 +332,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/c2.dolby.avc.dec.so"],
-            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libdolbyvision", "libc++", "libc"],
+            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libc++", "libc"],
         },
     },
     compile_multilib: "32",
@@ -347,7 +347,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/c2.dolby.avc.sec.dec.so"],
-            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libdolbyvision", "libc++", "libc"],
+            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libc++", "libc"],
         },
     },
     compile_multilib: "32",
@@ -393,7 +393,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/c2.dolby.hevc.dec.so"],
-            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libdolbyvision", "libc++", "libc"],
+            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libc++", "libc"],
         },
     },
     compile_multilib: "32",
@@ -408,7 +408,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/c2.dolby.hevc.sec.dec.so"],
-            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libdolbyvision", "libc++", "libc"],
+            shared_libs: ["android.hardware.media.c2@1.0", "libcodec2_hidl@1.0", "libbase", "libcodec2", "libutils", "liblog", "libstagefright_foundation", "c2.dolby.store", "c2.dolby.client", "libc++", "libc"],
         },
     },
     compile_multilib: "32",
