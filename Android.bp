@@ -31,7 +31,7 @@ cc_prebuilt_library_shared {
         "libutils",
     ],
     compile_multilib: "both",
-    [span_4](start_span)[span_5](start_span)check_elf_files: false, // Bypassing DT_NEEDED check as per error log[span_4](end_span)[span_5](end_span)
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
