@@ -298,7 +298,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "c2.dolby.avc.sec.dec",
+    name: "c2.dolby.avc.dec", // Reverted to match PRODUCT_PACKAGES
     owner: "xiaomi",
     target: {
         android_arm: {
@@ -313,7 +313,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "c2.dolby.hevc.sec.dec",
+    name: "c2.dolby.hevc.dec", // Reverted to match PRODUCT_PACKAGES
     owner: "xiaomi",
     target: {
         android_arm: {
