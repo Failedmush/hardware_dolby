@@ -1,10 +1,12 @@
 // Copyright (C) 2022 FlamingoOS Project
-// Combined Dolby Atmos (v33 Foundation) & Dolby Vision (Standard Foundation)
+// Combined Dolby Atmos (Multilib v33) & Dolby Vision (32-bit Standard)
 
 soong_namespace {
 }
 
-// --- Dolby Atmos & Audio (Multilib / v33 Foundation) ---
+// ==========================================================
+// --- SECTION 1: Dolby Atmos & Audio (64-bit & 32-bit) ---
+// ==========================================================
 
 cc_prebuilt_library_shared {
     name: "libdlbpreg",
@@ -14,7 +16,7 @@ cc_prebuilt_library_shared {
         android_arm: { srcs: ["proprietary/vendor/lib/libdlbpreg.so"] },
         android_arm64: { srcs: ["proprietary/vendor/lib64/libdlbpreg.so"] },
     },
-    // Atmos specifically requires v33 foundation per logs
+    // Atmos requires v33 foundation per build logs
     shared_libs: [
         "libaudioutils", 
         "libc++", 
@@ -24,7 +26,7 @@ cc_prebuilt_library_shared {
         "libutils"
     ],
     compile_multilib: "both",
-    check_elf_files: false, // Bypass strict v33 check per log suggestion
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -89,7 +91,9 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// --- Dolby Vision / Codec2 (32-bit Only / Standard Foundation) ---
+// ==========================================================
+// --- SECTION 2: Dolby Vision / Codec2 (32-bit Only) ---
+// ==========================================================
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.store",
@@ -191,4 +195,17 @@ cc_prebuilt_binary {
     ],
     compile_multilib: "32",
     relative_install_path: "hw",
-    prefer: true
+    prefer: true,
+    soc_specific: true,
+}
+
+// ==========================================================
+// --- SECTION 3: VINTF Manifests ---
+// ==========================================================
+
+prebuilt_etc_xml {
+    name: "c2_manifest_vendor.xml",
+    src: "proprietary/vendor/etc/vintf/manifest/c2_manifest_vendor.xml",
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
