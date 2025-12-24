@@ -31,7 +31,7 @@ cc_prebuilt_library_shared {
         "libutils",
     ],
     compile_multilib: "both",
-    check_elf_files: false,
+    [span_4](start_span)[span_5](start_span)check_elf_files: false, // Bypassing DT_NEEDED check as per error log[span_4](end_span)[span_5](end_span)
     prefer: true,
     soc_specific: true,
 }
@@ -154,10 +154,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/vendor/lib/libhwdap.so"],
+            srcs: ["proprietary/vendor/lib/soundfx/libhwdap.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/libhwdap.so"],
+            srcs: ["proprietary/vendor/lib64/soundfx/libhwdap.so"],
         },
     },
     shared_libs: [
@@ -168,6 +168,7 @@ cc_prebuilt_library_shared {
         "libaudioutils",
     ],
     compile_multilib: "both",
+    relative_install_path: "soundfx",
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
@@ -181,10 +182,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/vendor/lib/libswgamedap.so"],
+            srcs: ["proprietary/vendor/lib/soundfx/libswgamedap.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/libswgamedap.so"],
+            srcs: ["proprietary/vendor/lib64/soundfx/libswgamedap.so"],
         },
     },
     shared_libs: [
@@ -195,6 +196,7 @@ cc_prebuilt_library_shared {
         "libaudioutils",
     ],
     compile_multilib: "both",
+    relative_install_path: "soundfx",
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
@@ -208,10 +210,10 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["proprietary/vendor/lib/libswvqe.so"],
+            srcs: ["proprietary/vendor/lib/soundfx/libswvqe.so"],
         },
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/libswvqe.so"],
+            srcs: ["proprietary/vendor/lib64/soundfx/libswvqe.so"],
         },
     },
     shared_libs: [
@@ -222,6 +224,7 @@ cc_prebuilt_library_shared {
         "libaudioutils",
     ],
     compile_multilib: "both",
+    relative_install_path: "soundfx",
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
@@ -248,6 +251,7 @@ cc_prebuilt_library_shared {
         "libutils",
     ],
     compile_multilib: "both",
+    relative_install_path: "soundfx",
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
