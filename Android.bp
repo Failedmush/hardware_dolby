@@ -447,7 +447,58 @@ cc_prebuilt_binary {
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
+// ==========================================================
+// --- SECTION 2: Dolby Vision / Codec2 (32-bit Only) ---
+// ==========================================================
+
+cc_prebuilt_library_shared {
+    name: "c2.dolby.client",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/c2.dolby.client.so"],
+        },
+    },
+    shared_libs: [
+        "android.hardware.media.c2@1.0",
+        "libbase",
+        "libc++",
+        "libcodec2",
+        "libcodec2_hidl@1.0",
+        "libcodec2_vndk",
+        "libhidlbase",
+        "liblog",
+        "libstagefright_bufferpool@2.0.1",
+        "libutils",
+    ],
+    compile_multilib: "32",
+    [span_2](start_span)check_elf_files: false, // Bypass ELF check as suggested in log[span_2](end_span)
+    prefer: true,
+    soc_specific: true,
 }
+
+cc_prebuilt_library_shared {
+    name: "c2.dolby.store",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/c2.dolby.store.so"],
+        },
+    },
+    shared_libs: ["android.hardware.media.c2@1.0", "libbase", "libc++", "libcodec2", "libcodec2_hidl@1.0", "libcodec2_vndk", "liblog", "libutils"],
+    compile_multilib: "32",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+// ... keep other c2.dolby libraries here ...
+
+// ==========================================================
+// --- SECTION 3: DMS Service & Binaries ---
+// ==========================================================
 
 cc_prebuilt_binary {
     name: "dolbycodec2",
@@ -457,7 +508,22 @@ cc_prebuilt_binary {
             srcs: ["proprietary/vendor/bin/hw/dolbycodec2"],
         },
     },
-    shared_libs: ["android.hardware.media.c2@1.0", "c2.dolby.store", "libavservices_minijail_vendor", "libbinder", "libc++", "libcodec2_hidl@1.0", "libhidlbase", "liblog", "libstagefright_foundation", "libutils", "libc", "libm", "libdl"],
+    // shared_libs MUST be outside of the target block
+    shared_libs: [
+        "android.hardware.media.c2@1.0", 
+        "c2.dolby.store", 
+        "libavservices_minijail_vendor", 
+        "libbinder", 
+        "libc++", 
+        "libcodec2_hidl@1.0", 
+        "libhidlbase", 
+        "liblog", 
+        "libstagefright_foundation", 
+        "libutils", 
+        "libc", 
+        "libm", 
+        "libdl"
+    ],
     compile_multilib: "32",
     relative_install_path: "hw",
     check_elf_files: false,
