@@ -1,5 +1,5 @@
 // Copyright (C) 2022 FlamingoOS Project
-// Combined Dolby Atmos (both) & Dolby Vision (32-bit only) for renoir
+// Combined Dolby Atmos (32/64-bit) & Dolby Vision (32-bit only) for renoir
 
 soong_namespace {
 }
