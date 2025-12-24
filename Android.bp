@@ -18,6 +18,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libstagefright_foundation-v33", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Corrected: directly in lib64
             srcs: ["proprietary/vendor/lib64/libdlbpreg.so"],
             shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libstagefright_foundation-v33", "libc++", "libc", "libm", "libdl"],
         },
@@ -38,6 +39,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["libstagefright_softomx", "libstagefright_foundation-v33", "libutils", "liblog", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Corrected: screenshot shows libstagefrightdolby.so here
             srcs: ["proprietary/vendor/lib64/libstagefrightdolby.so"],
             shared_libs: ["libstagefright_softomx", "libstagefright_foundation-v33", "libutils", "liblog", "libc++", "libc", "libm", "libdl"],
         },
@@ -58,6 +60,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libstagefright_foundation-v33", "libdlbpreg", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Path verified: this one IS in soundfx
             srcs: ["proprietary/vendor/lib64/soundfx/libdlbvol.so"],
             shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libstagefright_foundation-v33", "libdlbpreg", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl"],
         },
@@ -79,6 +82,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Corrected: directly in lib64
             srcs: ["proprietary/vendor/lib64/libdapparamstorage.so"],
             shared_libs: ["libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl"],
         },
@@ -99,6 +103,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["libhidlbase", "vendor.dolby.hardware.dms@2.0", "libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Corrected: directly in lib64
             srcs: ["proprietary/vendor/lib64/libdeccfg.so"],
             shared_libs: ["libhidlbase", "vendor.dolby.hardware.dms@2.0", "libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl"],
         },
@@ -203,6 +208,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["libhidlbase", "vendor.dolby.hardware.dms@2.0", "libdeccfg", "libstagefright_foundation-v33", "libutils", "libcutils", "liblog", "libstagefright_omx", "libstagefright_softomx", "libmedia_omx", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Corrected: directly in lib64
             srcs: ["proprietary/vendor/lib64/libstagefright_soft_ac4dec.so"],
             shared_libs: ["libhidlbase", "vendor.dolby.hardware.dms@2.0", "libdeccfg", "libstagefright_foundation-v33", "libutils", "libcutils", "liblog", "libstagefright_omx", "libstagefright_softomx", "libmedia_omx", "libc++", "libc", "libm", "libdl"],
         },
@@ -223,6 +229,7 @@ cc_prebuilt_library_shared {
             shared_libs: ["libhidlbase", "vendor.dolby.hardware.dms@2.0", "libdeccfg", "libstagefright_foundation-v33", "libutils", "libcutils", "liblog", "libstagefright_omx", "libstagefright_softomx", "libmedia_omx", "libc++", "libc", "libm", "libdl"],
         },
         android_arm64: {
+            // Corrected: directly in lib64
             srcs: ["proprietary/vendor/lib64/libstagefright_soft_ddpdec.so"],
             shared_libs: ["libhidlbase", "vendor.dolby.hardware.dms@2.0", "libdeccfg", "libstagefright_foundation-v33", "libutils", "libcutils", "liblog", "libstagefright_omx", "libstagefright_softomx", "libmedia_omx", "libc++", "libc", "libm", "libdl"],
         },
@@ -372,8 +379,8 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            // Using the discovered double-proprietary path
-            srcs: ["proprietary/vendor/lib64/proprietary/vendor/lib64/libdlbdsservice.so"],
+            // Corrected: directly in lib64 as seen in screenshot
+            srcs: ["proprietary/vendor/lib64/libdlbdsservice.so"],
             shared_libs: ["libutils", "libstagefright_foundation-v33", "liblog", "libxml2", "libcrypto", "libdapparamstorage", "libsqlite", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl"],
         },
     },
