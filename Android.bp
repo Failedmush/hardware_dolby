@@ -423,7 +423,16 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/c2.dolby.store.so"],
-            shared_libs: ["libbase", "libcodec2", "libcodec2_hidl@1.0", "libutils", "android.hardware.media.c2@1.0", "liblog", "libcutils", "libc++", "libc"],
+            shared_libs: [
+                "android.hardware.media.c2@1.0",
+                "libbase",
+                "libc++",
+                "libcodec2",
+                "libcodec2_hidl@1.0",
+                "libcodec2_vndk",
+                "liblog",
+                "libutils",
+            ],
         },
     },
     compile_multilib: "32",
@@ -431,7 +440,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// Added libdovi as requested
 cc_prebuilt_library_shared {
     name: "libdovi",
     owner: "xiaomi",
@@ -439,13 +447,31 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/libdovi.so"],
-            shared_libs: ["liblog", "libc++", "libc", "libm", "libdl"],
+            shared_libs: [
+                "android.hardware.media.c2@1.0",
+                "c2.dolby.egl",
+                "libEGL",
+                "libGLESv2",
+                "libbase",
+                "libc++",
+                "libcodec2",
+                "libcodec2_hidl@1.0",
+                "libcodec2_vndk",
+                "libcutils",
+                "libdolbyottcameracontrol",
+                "libhidlbase",
+                "liblog",
+                "libstagefright_foundation",
+                "libui",
+                "libutils",
+            ],
         },
     },
     compile_multilib: "32",
     prefer: true,
     soc_specific: true,
 }
+
 
 cc_prebuilt_library_shared {
     name: "libdolbyottcameracontrol",
