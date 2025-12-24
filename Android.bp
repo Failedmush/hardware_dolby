@@ -298,7 +298,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "c2.dolby.avc.dec",
+    name: "c2.dolby.avc.sec.dec",
     owner: "xiaomi",
     target: {
         android_arm: {
@@ -313,7 +313,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "c2.dolby.hevc.dec",
+    name: "c2.dolby.hevc.sec.dec",
     owner: "xiaomi",
     target: {
         android_arm: {
@@ -388,7 +388,6 @@ cc_prebuilt_library_shared {
     strip: { none: true },
     target: {
         android_arm64: {
-            // Corrected path based on screenshot: directly in lib64 folder
             srcs: ["proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so"],
             shared_libs: ["libhidlbase", "libutils", "liblog", "libdapparamstorage", "libdlbdsservice", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl"],
         },
