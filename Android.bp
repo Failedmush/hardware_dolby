@@ -31,7 +31,8 @@ cc_prebuilt_library_shared {
         android_arm: { srcs: ["proprietary/vendor/lib/libstagefrightdolby.so"] },
         android_arm64: { srcs: ["proprietary/vendor/lib64/libstagefrightdolby.so"] },
     },
-    shared_libs: ["libc++", "liblog", "libstagefright_foundation-v33", "libstagefright_soft_omx", "libutils"],
+    // FIXED: changed libstagefright_soft_omx to libstagefright_softomx
+    shared_libs: ["libc++", "liblog", "libstagefright_foundation-v33", "libstagefright_softomx", "libutils"],
     compile_multilib: "both",
     check_elf_files: false,
     prefer: true,
@@ -53,8 +54,6 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
-
-// --- Additional Atmos Support Libraries ---
 
 cc_prebuilt_library_shared {
     name: "libdapparamstorage",
@@ -232,8 +231,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// --- Standard Decoders ---
-
 cc_prebuilt_library_shared {
     name: "c2.dolby.avc.dec",
     owner: "xiaomi",
@@ -255,8 +252,6 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
-
-// --- Secure Decoders (Required per your error log) ---
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.avc.sec.dec",
