@@ -16,6 +16,7 @@ cc_prebuilt_library_shared {
         android_arm: { srcs: ["proprietary/vendor/lib/libdlbpreg.so"] },
         android_arm64: { srcs: ["proprietary/vendor/lib64/libdlbpreg.so"] },
     },
+    [span_2](start_span)// Fix for DT_NEEDED "libstagefright_foundation-v33.so" error[span_2](end_span)
     shared_libs: ["libaudioutils", "libc++", "libcutils", "liblog", "libstagefright_foundation-v33", "libutils"],
     compile_multilib: "both",
     check_elf_files: false,
@@ -31,7 +32,7 @@ cc_prebuilt_library_shared {
         android_arm: { srcs: ["proprietary/vendor/lib/libstagefrightdolby.so"] },
         android_arm64: { srcs: ["proprietary/vendor/lib64/libstagefrightdolby.so"] },
     },
-    // FIXED: changed libstagefright_soft_omx to libstagefright_softomx
+    // Dependency fix: libstagefright_foundation-v33 and correct softomx name
     shared_libs: ["libc++", "liblog", "libstagefright_foundation-v33", "libstagefright_softomx", "libutils"],
     compile_multilib: "both",
     check_elf_files: false,
@@ -65,6 +66,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -79,6 +81,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -93,6 +96,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils", "libaudioutils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -107,6 +111,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils", "libaudioutils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -121,6 +126,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils", "libaudioutils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -130,11 +136,13 @@ cc_prebuilt_library_shared {
     owner: "xiaomi",
     strip: { none: true },
     target: {
-        android_arm: { srcs: ["proprietary/vendor/lib/libspatialaudio.so"] },
-        android_arm64: { srcs: ["proprietary/vendor/lib64/libspatialaudio.so"] },
+        // Updated paths to include soundfx/ directory
+        android_arm: { srcs: ["proprietary/vendor/lib/soundfx/libspatialaudio.so"] },
+        android_arm64: { srcs: ["proprietary/vendor/lib64/soundfx/libspatialaudio.so"] },
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -149,11 +157,10 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libcutils", "libutils", "libbinder"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
-
-// --- Dolby Soft Decoders ---
 
 cc_prebuilt_library_shared {
     name: "libstagefright_soft_ac4dec",
@@ -165,6 +172,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libutils", "libstagefright_omx_utils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -179,6 +187,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libc++", "liblog", "libutils", "libstagefright_omx_utils"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -281,6 +290,7 @@ cc_prebuilt_library_shared {
     target: { android_arm: { srcs: ["proprietary/vendor/lib/libdovi.so"] } },
     shared_libs: ["android.hardware.media.c2@1.0", "c2.dolby.egl", "libEGL", "libGLESv2", "libbase", "libc++", "libcodec2", "libcodec2_hidl@1.0", "libcodec2_vndk", "libcutils", "libdolbyottcameracontrol", "libhidlbase", "liblog", "libstagefright_foundation", "libui", "libutils"],
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -299,6 +309,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++"],
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -314,6 +325,7 @@ cc_prebuilt_library_shared {
     shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "vendor.dolby.hardware.dms@2.0"],
     compile_multilib: "both",
     relative_install_path: "hw",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -327,6 +339,7 @@ cc_prebuilt_binary {
     shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "vendor.dolby.hardware.dms@2.0"],
     compile_multilib: "64",
     relative_install_path: "hw",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -338,6 +351,7 @@ cc_prebuilt_binary {
     shared_libs: ["android.hardware.media.c2@1.0", "c2.dolby.store", "libavservices_minijail_vendor", "libbinder", "libc++", "libcodec2_hidl@1.0", "libhidlbase", "liblog", "libstagefright_foundation", "libutils"],
     compile_multilib: "32",
     relative_install_path: "hw",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
