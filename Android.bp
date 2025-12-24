@@ -246,7 +246,6 @@ cc_prebuilt_library_shared {
             srcs: ["proprietary/vendor/lib/c2.dolby.client.so"],
         },
     },
-    [span_4](start_span)[span_5](start_span)// Updated shared_libs to fix ELF check failure[span_4](end_span)[span_5](end_span)
     shared_libs: [
         "android.hardware.media.c2@1.0",
         "libbase",
@@ -309,7 +308,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// Standard Variant
 cc_prebuilt_library_shared {
     name: "c2.dolby.avc.dec",
     owner: "xiaomi",
@@ -325,7 +323,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// Secure Variant Alias
 cc_prebuilt_library_shared {
     name: "c2.dolby.avc.sec.dec",
     owner: "xiaomi",
@@ -341,7 +338,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// Standard Variant
 cc_prebuilt_library_shared {
     name: "c2.dolby.hevc.dec",
     owner: "xiaomi",
@@ -357,7 +353,6 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// Secure Variant Alias
 cc_prebuilt_library_shared {
     name: "c2.dolby.hevc.sec.dec",
     owner: "xiaomi",
