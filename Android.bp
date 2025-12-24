@@ -423,7 +423,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: ["proprietary/vendor/lib/c2.dolby.store.so"],
-            shared_libs: ["libbase", "libcodec2", "libutils", "android.hardware.media.c2@1.0", "liblog", "libcutils", "libc++", "libc"],
+            shared_libs: ["libbase", "libcodec2", libcodec2_hidl@1.0", "libutils", "android.hardware.media.c2@1.0", "liblog", "libcutils", "libc++", "libc"],
         },
     },
     compile_multilib: "32",
