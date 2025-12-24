@@ -1,5 +1,5 @@
 // Copyright (C) 2022 FlamingoOS Project
-// Combined Dolby Atmos (Multilib v33) & Dolby Vision (32-bit Standard)
+// Combined Dolby Atmos (Multilib) & Dolby Vision (32-bit Only) for renoir
 
 soong_namespace {
 }
@@ -16,7 +16,7 @@ cc_prebuilt_library_shared {
         android_arm: { srcs: ["proprietary/vendor/lib/libdlbpreg.so"] },
         android_arm64: { srcs: ["proprietary/vendor/lib64/libdlbpreg.so"] },
     },
-    // Atmos requires v33 foundation per build logs
+    // Required fix for DT_NEEDED libstagefright_foundation-v33.so error
     shared_libs: [
         "libaudioutils", 
         "libc++", 
@@ -26,7 +26,7 @@ cc_prebuilt_library_shared {
         "libutils"
     ],
     compile_multilib: "both",
-    check_elf_files: false,
+    check_elf_files: false, // Bypassing ELF check as suggested in logs
     prefer: true,
     soc_specific: true,
 }
@@ -94,6 +94,19 @@ cc_prebuilt_library_shared {
 // ==========================================================
 // --- SECTION 2: Dolby Vision / Codec2 (32-bit Only) ---
 // ==========================================================
+
+cc_prebuilt_library_shared {
+    name: "c2.dolby.client",
+    owner: "xiaomi",
+    strip: { none: true },
+    target: {
+        android_arm: { srcs: ["proprietary/vendor/lib/c2.dolby.client.so"] },
+    },
+    shared_libs: ["libcodec2_hidl@1.0", "libcodec2_vndk", "libutils", "liblog", "libc++"],
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.store",
@@ -198,10 +211,6 @@ cc_prebuilt_binary {
     prefer: true,
     soc_specific: true,
 }
-
-// ==========================================================
-// --- SECTION 3: VINTF Manifests ---
-// ==========================================================
 
 prebuilt_etc_xml {
     name: "c2_manifest_vendor.xml",
