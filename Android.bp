@@ -246,9 +246,9 @@ cc_prebuilt_library_shared {
         "liblog",
         "libstagefright_bufferpool@2.0.1",
         "libutils",
-      },
-    },
+    ],
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -264,6 +264,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["android.hardware.media.c2@1.0", "libbase", "libc++", "libcodec2", "libcodec2_hidl@1.0", "libcodec2_vndk", "liblog", "libutils"],
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -279,6 +280,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["libui", "libGLESv3", "libEGL", "liblog", "libstagefright_foundation", "libnativewindow", "libc++"],
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -294,6 +296,7 @@ cc_prebuilt_library_shared {
     },
     shared_libs: ["liblog", "libGLESv3", "libEGL", "libc", "libm", "libdl"],
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
