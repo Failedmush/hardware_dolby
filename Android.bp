@@ -443,6 +443,22 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libDecoderProcessor",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libDecoderProcessor.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "c2.dolby.avc.dec",
     owner: "xiaomi",
     strip: {
@@ -789,6 +805,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/dolbycodec2",
             ],
             shared_libs: [
+                "libDecoderProcessor",
                 "libshim_dolby",
                 "libbase",
                 "liblog",
@@ -816,4 +833,3 @@ cc_prebuilt_binary {
     relative_install_path: "hw",
     soc_specific: true,
 }
-
