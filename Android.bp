@@ -1,4 +1,3 @@
-
 // Copyright (C) 2022 FlamingoOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,10 +10,10 @@
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
-[span_0](start_span)// limitations under the License.[span_0](end_span)
+// limitations under the License.
 
 soong_namespace {
-[span_1](start_span)}
+}
 
 android_app_import {
 	name: "MotoSignatureApp",
@@ -25,7 +24,7 @@ android_app_import {
 		enabled: false,
 	},
 	system_ext_specific: true,
-}[span_1](end_span)
+}
 
 android_app_import {
 	name: "MotoDolbyDax3",
@@ -37,7 +36,7 @@ android_app_import {
 	},
 	privileged: true,
 	system_ext_specific: true,
-[span_2](start_span)}
+}
 
 android_app_import {
 	name: "MotorolaSettingsProvider",
@@ -49,7 +48,7 @@ android_app_import {
 	},
 	privileged: true,
 	system_ext_specific: true,
-}[span_2](end_span)
+}
 
 android_app_import {
 	name: "daxService",
@@ -61,42 +60,42 @@ android_app_import {
 	},
 	privileged: true,
 	system_ext_specific: true,
-[span_3](start_span)}
+}
 
 dex_import {
 	name: "com.motorola.frameworks.core.addon",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/com.motorola.frameworks.core.addon.jar"],
 	system_ext_specific: true,
-}[span_3](end_span)
+}
 
 dex_import {
 	name: "com.motorola.motosignature",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/com.motorola.motosignature.jar"],
 	system_ext_specific: true,
-[span_4](start_span)}
+}
 
 dex_import {
 	name: "moto-checkin",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/moto-checkin.jar"],
 	system_ext_specific: true,
-}[span_4](end_span)
+}
 
 dex_import {
 	name: "moto-settings",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/moto-settings.jar"],
 	system_ext_specific: true,
-[span_5](start_span)}
+}
 
 dex_import {
 	name: "moto",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/moto.jar"],
 	system_ext_specific: true,
-}[span_5](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "libdapparamstorage",
@@ -117,7 +116,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "both",
 	prefer: true,
 	soc_specific: true,
-[span_6](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libdlbpreg",
@@ -138,7 +137,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "both",
 	prefer: true,
 	soc_specific: true,
-}[span_6](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "vendor.dolby.hardware.dms@2.0",
@@ -159,7 +158,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "both",
 	prefer: true,
 	soc_specific: true,
-[span_7](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libdlbdsservice",
@@ -176,7 +175,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-}[span_7](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "liboem_specific",
@@ -193,7 +192,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-[span_8](start_span)[span_9](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "vendor.dolby.hardware.dms@2.0-impl",
@@ -210,7 +209,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-}[span_8](end_span)[span_9](end_span)
+}
 
 cc_prebuilt_binary {
 	name: "vendor.dolby.hardware.dms@2.0-service",
@@ -228,7 +227,7 @@ cc_prebuilt_binary {
 	prefer: true,
 	relative_install_path: "hw",
 	soc_specific: true,
-[span_10](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libcodec2_soft_ac4dec",
@@ -245,7 +244,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-}[span_10](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "libcodec2_soft_ddpdec",
@@ -262,7 +261,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-[span_11](start_span)[span_12](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libcodec2_soft_dolby",
@@ -279,7 +278,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-}[span_11](end_span)[span_12](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "libcodec2_store_dolby",
@@ -296,7 +295,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-[span_13](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libdeccfg",
@@ -313,7 +312,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
-}[span_13](end_span)
+}
 
 cc_prebuilt_binary {
 	name: "vendor.dolby.media.c2@1.0-service",
@@ -331,7 +330,7 @@ cc_prebuilt_binary {
 	prefer: true,
 	relative_install_path: "hw",
 	soc_specific: true,
-[span_14](start_span)[span_15](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libdlbvol",
@@ -353,7 +352,7 @@ cc_prebuilt_library_shared {
 	relative_install_path: "soundfx",
 	prefer: true,
 	soc_specific: true,
-}[span_14](end_span)[span_15](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "libswdap",
@@ -375,7 +374,7 @@ cc_prebuilt_library_shared {
 	relative_install_path: "soundfx",
 	prefer: true,
 	soc_specific: true,
-[span_16](start_span)[span_17](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libswgamedap",
@@ -397,7 +396,7 @@ cc_prebuilt_library_shared {
 	relative_install_path: "soundfx",
 	prefer: true,
 	soc_specific: true,
-}[span_16](end_span)[span_17](end_span)
+}
 
 cc_prebuilt_library_shared {
 	name: "libswvqe",
@@ -419,7 +418,7 @@ cc_prebuilt_library_shared {
 	relative_install_path: "soundfx",
 	prefer: true,
 	soc_specific: true,
-[span_18](start_span)}
+}
 
 cc_prebuilt_library_shared {
 	name: "libspatialaudio",
@@ -441,7 +440,7 @@ cc_prebuilt_library_shared {
 	relative_install_path: "soundfx",
 	prefer: true,
 	soc_specific: true,
-}[span_18](end_span)
+}
 
 cc_prebuilt_library_shared {
     name: "libeglcore",
@@ -510,7 +509,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-[span_19](start_span)[span_20](start_span)}
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.avc.sec.dec",
@@ -551,7 +550,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-}[span_19](end_span)[span_20](end_span)
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.client",
@@ -587,7 +586,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-[span_21](start_span)[span_22](start_span)}
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.egl",
@@ -617,7 +616,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-}[span_21](end_span)[span_22](end_span)
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.hevc.dec",
@@ -658,7 +657,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-[span_23](start_span)[span_24](start_span)}
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.hevc.sec.dec",
@@ -699,7 +698,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-}[span_23](end_span)[span_24](end_span)
+}
 
 cc_prebuilt_library_shared {
     name: "c2.dolby.store",
@@ -732,7 +731,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-[span_25](start_span)[span_26](start_span)}
+}
 
 cc_prebuilt_library_shared {
     name: "libdolbyottcameracontrol",
@@ -758,7 +757,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-}[span_25](end_span)[span_26](end_span)
+}
 
 cc_prebuilt_library_shared {
     name: "libdolbyvision",
@@ -798,7 +797,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
-[span_27](start_span)[span_28](start_span)}
+}
 
 prebuilt_etc_xml {
     name: "c2_manifest_vendor.xml",
@@ -807,7 +806,7 @@ prebuilt_etc_xml {
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
-}[span_27](end_span)[span_28](end_span)
+}
 
 cc_prebuilt_binary {
     name: "dolbycodec2",
@@ -844,4 +843,4 @@ cc_prebuilt_binary {
     prefer: true,
     relative_install_path: "hw",
     soc_specific: true,
-[span_29](start_span)[span_30](start_span)}[span_29](end_span)[span_30](end_span)
+}
